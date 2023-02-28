@@ -383,16 +383,10 @@ config:
   ## https://docs.fluentbit.io/manual/pipeline/outputs
   outputs: |
     [OUTPUT]
-        Name es
-        Match kube.*
-        Host elasticsearch-master
-        Logstash_Format On
-        Retry_Limit False
-
-    [OUTPUT]
-        Name es
-        Match host.*
-        Host elasticsearch-master
+        Name stackdriver
+        Match *
+        service_account_email samueliwu@meta.com
+        service_account_secret 33a37a5e8aa8ccfeb417340bd3103447262366ec
         Logstash_Format On
         Logstash_Prefix node
         Retry_Limit False
